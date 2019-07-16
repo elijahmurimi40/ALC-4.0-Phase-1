@@ -7,9 +7,14 @@
     <string name="heading">Welcome to ALC 4.0</string>
     <string name="title_activity_about_alc">About Alc</string>
     <string name="profile_name">Fortie40</string>
-    <string name="track">Track: Android</string>
-    <string name="country">Country: Kenya</string>
-    <string name="email">Email: elijahmurimi40@gmail.com</string>
-    <string name="phone_number">Phone Number: +254 726 256 253</string>
-    <string name="slack_username">Slack Username: @fortie40</string>
+    <string name="track_title">Track</string>
+    <string name="track_text">Android</string>
+    <string name="country_title">Country</string>
+    <string name="country_text">Kenya</string>
+    <string name="email_title">Email</string>
+    <string name="email_text">elijahmurimi40@gmail.com</string>
+    <string name="phone_number_title">Phone Number</string>
+    <string name="phone_number_text">+254 726 256 253</string>
+    <string name="slack_username_title">Slack Username</string>
+    <string name="slack_username_text">\@fortie40</string>
 </resources>
