@@ -15,6 +15,7 @@ public class AboutAlc extends AppCompatActivity {
 
     private SwipeRefreshLayout mSwipe;
     private WebView mWebView;
+    public static final String URL = "https://andela.com/alc/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,24 +40,23 @@ public class AboutAlc extends AppCompatActivity {
 
     // Load the website to the web view
     private void loadWeb() {
-        String url = "https://andela.com/alc/";
-
         mWebView = findViewById(R.id.web_view);
         mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.loadUrl(url);
-        mSwipe.setRefreshing(true);
+        mWebView.canGoBack();
+
         mWebView.setWebViewClient(new WebViewClient(){
+            // No Internet Connection
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 mWebView.loadUrl("file:///android_asset/error.html");
-                super.onReceivedError(view, request, error);
+                // super.onReceivedError(view, request, error);
             }
 
             // Ignore SSL certificate
             // Todo:  Implement certificate pinning
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-                //super.onReceivedSslError(view, handler, error);
+                // super.onReceivedSslError(view, handler, error);
                 handler.proceed();
             }
 
@@ -64,8 +64,10 @@ public class AboutAlc extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 mSwipe.setRefreshing(false);
-                super.onPageFinished(view, url);
+                // super.onPageFinished(view, url);
             }
         });
+        mWebView.loadUrl(URL);
+        mSwipe.setRefreshing(true);
     }
 }
