@@ -1,4 +1,5 @@
 # ALC-4.0-Phase-1
+First ALC 4.0 Challenge
 
 Minimum Android Version 5.0 (Lollipop)
 
